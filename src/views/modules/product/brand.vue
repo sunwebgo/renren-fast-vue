@@ -37,7 +37,7 @@
               style="width: 100px; height: 80px"
               :src="scope.row.logo"
           fit="fill"></el-image>-->
-          <img :src="scope.row.logo" style="width: 100px; height: 80px"/>
+          <img :src="scope.row.logo" style="width: 100px; height: 100px"/>
         </template>
       </el-table-column>
       <el-table-column prop="descript" header-align="center" align="center" label="介绍"></el-table-column>
@@ -201,12 +201,12 @@ export default {
     },
     updateBrandStatus (data) {
       console.log('最新信息', data)
-      let {brandId, showStatus} = data
+      let {brandId, showStatus, name} = data
       //发送请求修改状态
       this.$http({
-        url: this.$http.adornUrl('/product/brand/update/status'),
+        url: this.$http.adornUrl('/product/brand/update'),
         method: 'post',
-        data: this.$http.adornData({brandId, showStatus}, false)
+        data: this.$http.adornData({brandId, showStatus, name}, false)
       }).then(({data}) => {
         this.$message({
           type: 'success',

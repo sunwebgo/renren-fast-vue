@@ -79,6 +79,7 @@
   </el-row>
 </template>
 
+
 <script>
 /**
  * 父子组件传递数据
@@ -121,13 +122,14 @@ export default {
       })
     },
     //感知树节点被点击
-    treenodeclick (data, node, component) {
+    treenodeclick (data, node) {
       if (node.level == 3) {
         this.catId = data.catId
         this.getDataList() //重新查询
       }
     },
     getAllDataList () {
+      this.dataForm.key = ''
       this.catId = 0
       this.getDataList()
     },

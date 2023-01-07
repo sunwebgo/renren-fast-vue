@@ -93,11 +93,12 @@ export default {
       this.catalogId = this.$route.query.catalogId;
       console.log("----", this.spuId, this.catalogId);
     },
+
     showBaseAttrs() {
       let _this = this;
       this.$http({
         url: this.$http.adornUrl(
-          `/product/attrgroup/${this.catalogId}/withattr`
+          `/product/attrgroup/withattr/` + this.catalogId
         ),
         method: "get",
         params: this.$http.adornParams({})

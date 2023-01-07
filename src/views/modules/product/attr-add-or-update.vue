@@ -175,7 +175,6 @@ export default {
       this.attrGroups = []
       this.dataForm.attrGroupId = ''
       this.dataForm.catelogId = path[path.length - 1]
-      // eslint-disable-next-line eqeqeq
       if (path && path.length == 3) {
         this.$http({
           url: this.$http.adornUrl(

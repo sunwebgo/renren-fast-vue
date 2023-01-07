@@ -156,7 +156,6 @@ export default {
     },
     submitAddRealtion () {
       this.innerVisible = false
-      console.log('准备新增的数据', this.innerdataListSelections)
       if (this.innerdataListSelections.length > 0) {
         let postData = []
         this.innerdataListSelections.forEach(item => {
@@ -182,7 +181,7 @@ export default {
       this.visible = true
       this.$http({
         url: this.$http.adornUrl(
-          '/product/attrgroup/' + this.attrGroupId + '/attr/relation'
+          '/product/attrgroup/attr/relation/' + this.attrGroupId
         ),
         method: 'get',
         params: this.$http.adornParams({})
@@ -196,7 +195,7 @@ export default {
       this.dataListLoading = true
       this.$http({
         url: this.$http.adornUrl(
-          '/product/attrgroup/' + this.attrGroupId + '/noattr/relation'
+          '/product/attrgroup/noattr/relation/' + this.attrGroupId
         ),
         method: 'get',
         params: this.$http.adornParams({

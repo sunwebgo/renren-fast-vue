@@ -159,7 +159,9 @@ export default {
         this.getDataList(); //重新查询
       }
     },
+    //查询全部
     getAllDataList(){
+      this.dataForm.key = '';
       this.catId = 0;
       this.getDataList();
     },

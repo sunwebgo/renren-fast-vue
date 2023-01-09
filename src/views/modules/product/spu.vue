@@ -20,7 +20,7 @@
             <el-input style="width:160px" v-model="dataForm.key" clearable></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="searchSpuInfo">查询</el-button>
+            <el-button type="primary" @click="searchSpuInfo">查询/查询全部</el-button>
           </el-form-item>
         </el-form>
       </el-col>

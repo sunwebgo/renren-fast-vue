@@ -85,13 +85,11 @@ export default {
         data.data.forEach(item => {
           this.spuAttrsMap["" + item.attrId] = item;
         });
-        console.log("~~~~", this.spuAttrsMap);
       });
     },
     getQueryParams() {
       this.spuId = this.$route.query.spuId;
       this.catelogId = this.$route.query.catelogId;
-      console.log("----", this.spuId, this.catelogId);
     },
 
     showBaseAttrs() {
@@ -110,7 +108,7 @@ export default {
             let v = "";
             if (_this.spuAttrsMap["" + attr.attrId]) {
               v = _this.spuAttrsMap["" + attr.attrId].attrValue.split(";");
-              if (v.length == 1) {
+              if (v.length == 1 && attr.valueType == 0) {
                 v = v[0] + "";
               }
             }
@@ -129,7 +127,6 @@ export default {
       });
     },
     submitSpuAttrs() {
-      console.log("·····", this.dataResp.baseAttrs);
       //spu_id  attr_id  attr_name             attr_value             attr_sort  quick_show
       let submitData = [];
       this.dataResp.baseAttrs.forEach(item => {

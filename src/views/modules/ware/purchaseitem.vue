@@ -32,7 +32,7 @@
           </el-button>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item command="delete">批量删除</el-dropdown-item>
-            <el-dropdown-item command="merge">合并整单</el-dropdown-item>
+            <el-dropdown-item command="merge">合并成采购单</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </el-form-item>
@@ -78,7 +78,7 @@
     ></el-pagination>
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-    <el-dialog title="合并到整单" :visible.sync="mergedialogVisible">
+    <el-dialog title="合并成采购单" :visible.sync="mergedialogVisible">
       <!-- id  assignee_id  assignee_name  phone   priority status -->
       <el-select v-model="purchaseId" placeholder="请选择" clearable filterable>
         <el-option

@@ -143,7 +143,6 @@ export default {
   },
   mounted() {
     this.dataSub = PubSub.subscribe("dataForm", (msg, val) => {
-      console.log("~~~~~", val);
       this.dataForm = val;
       this.getDataList();
     });
